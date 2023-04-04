@@ -1,9 +1,9 @@
-const connectToMongo = require("./db");
 const express = require("express");
 const cors = require("cors");
+require("./config/db");
 
 // app.use(cors());
-connectToMongo();
+// connectToMongo();
 const app = express();
 const port = 3030;
 
@@ -17,6 +17,6 @@ app.use("/api/notes", require("./routes/notes"));
 // app.get("/", (req, res) => {
 //   res.send("Hello KAMAL !");
 // });
-app.listen(port, () => {
-  console.log(`iNoteBook Backend listening on port http://localhost:${port}`);
-});
+app.listen(port, () =>
+  console.log(`iNoteBook Backend listening on port ${port}`)
+);
